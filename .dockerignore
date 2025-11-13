@@ -1,0 +1,46 @@
+# VCS
+.git
+.gitignore
+
+# Node / build artifacts
+node_modules
+dist
+build
+coverage
+npm-debug.log*
+yarn-*.log
+pnpm-*.log
+
+# Terraform (not needed in the image)
+.terraform/
+terraform.tfstate
+terraform.tfstate.*
+*.tfvars
+*.tfvars.json
+crash.log
+crash.*.log
+
+# Secrets / creds
+.env
+.env.*
+*.pem
+*.key
+*.crt
+*.pub
+*.secret
+
+# CI / docs (keep image small)
+Jenkinsfile
+Dockerfile.jenkins
+README.md
+**/*.md
+
+# Editor / OS junk
+.vscode/
+.idea/
+*.iml
+.DS_Store
+Thumbs.db
+*.swp
+*.tmp
+

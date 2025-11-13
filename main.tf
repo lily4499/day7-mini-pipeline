@@ -18,7 +18,7 @@ locals {
 
 resource "aws_instance" "app" {
   ami                         = local.ami_ubuntu
-  instance_type               = "t3.micro"            # low cost
+  instance_type               = "t3.medium"            # low cost
   subnet_id                   = local.subnet_id
   vpc_security_group_ids      = [local.sg_id]
   associate_public_ip_address = true
@@ -41,6 +41,6 @@ resource "aws_instance" "app" {
 
 output "public_ip" { value = aws_instance.app.public_ip }
 output "url"       { value = "http://${aws_instance.app.public_ip}" }
-output "ssh_cmd"   { value = "ssh -i ./ec2-devops-key.pem ubuntu@${aws_instance.app.public_ip}" }
+output "ssh_cmd"   { value = "ssh -i ~/ec2.pem ubuntu@${aws_instance.app.public_ip}" }
 
 
